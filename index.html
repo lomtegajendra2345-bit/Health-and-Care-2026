@@ -380,6 +380,60 @@ document.getElementById("slider").src=images[i];
 </div>
 
   </section>
+  <h2 style="text-align:center;">BMI Calculator</h2>
+
+<div style="background:#ffffff;padding:20px;border-radius:10px;width:300px;margin:auto;box-shadow:0 0 10px #ccc;text-align:center;">
+
+<input type="number" id="height" placeholder="Height (cm)" style="margin:5px;padding:8px;width:90%"><br>
+
+<input type="number" id="weight" placeholder="Weight (kg)" style="margin:5px;padding:8px;width:90%"><br>
+
+<button onclick="calculateBMI()" style="padding:10px 20px;background:green;color:white;border:none;border-radius:5px;">
+Calculate BMI
+</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function calculateBMI() {
+
+let height = document.getElementById("height").value / 100;
+let weight = document.getElementById("weight").value;
+
+let bmi = weight / (height * height);
+
+document.getElementById("result").innerHTML = "Your BMI: " + bmi.toFixed(2);
+
+}
+</script>
+  <h2 style="text-align:center;">Daily Water Intake Calculator</h2>
+
+<div style="background:#ffffff;padding:20px;border-radius:10px;width:300px;margin:auto;box-shadow:0 0 10px #ccc;text-align:center;">
+
+<input type="number" id="bodyweight" placeholder="Your Weight (kg)" style="margin:5px;padding:8px;width:90%"><br>
+
+<button onclick="waterCalc()" style="padding:10px 20px;background:blue;color:white;border:none;border-radius:5px;">
+Calculate Water
+</button>
+
+<p id="waterresult"></p>
+
+</div>
+
+<script>
+function waterCalc(){
+
+let weight = document.getElementById("bodyweight").value;
+
+let water = weight * 0.033;
+
+document.getElementById("waterresult").innerHTML =
+"You should drink about " + water.toFixed(2) + " liters of water daily";
+
+}
+</script>
 
 </section>
   <h2>🌐 Follow Our Social Media</h2>
@@ -403,6 +457,66 @@ document.getElementById("slider").src=images[i];
 </p>
 
 </div>
+  <h2 style="text-align:center;">Health Symptom Checker</h2>
+
+<div style="background:white;padding:20px;border-radius:10px;width:320px;margin:auto;box-shadow:0 0 10px #ccc;text-align:center;">
+
+<select id="symptom" style="padding:8px;width:90%;margin:10px;">
+<option value="">Select Symptom</option>
+<option value="fever">Fever</option>
+<option value="cough">Cough</option>
+<option value="headache">Headache</option>
+<option value="stomach">Stomach Pain</option>
+<option value="tired">Tiredness</option>
+</select>
+
+<br>
+
+<button onclick="checkSymptom()" style="padding:10px 20px;background:#28a745;color:white;border:none;border-radius:5px;">
+Check
+</button>
+
+<p id="symptomResult" style="margin-top:10px;"></p>
+
+</div>
+
+<script>
+
+function checkSymptom(){
+
+let symptom = document.getElementById("symptom").value;
+
+let result = "";
+
+if(symptom=="fever"){
+result="You may have viral fever. Drink fluids and rest.";
+}
+
+else if(symptom=="cough"){
+result="Cough may be due to cold or throat infection.";
+}
+
+else if(symptom=="headache"){
+result="Headache can be caused by stress, dehydration, or lack of sleep.";
+}
+
+else if(symptom=="stomach"){
+result="Stomach pain may occur due to indigestion or infection.";
+}
+
+else if(symptom=="tired"){
+result="Tiredness may occur due to weakness or lack of sleep.";
+}
+
+else{
+result="Please select a symptom.";
+}
+
+document.getElementById("symptomResult").innerHTML=result;
+
+}
+
+</script>
 
 <footer>
 <p>Contact: 9834354332 | lomtegajendra1234@gmail.com</p>
